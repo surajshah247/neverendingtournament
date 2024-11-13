@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Players Overview</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b30d0d; /* Bloody Red */
+            font-size: 3rem;
+            padding: 20px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #222;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        /* Image Section */
+        .image-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .image-section img {
+            width: 90%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        /* Red and Black Theme */
+        .red-text {
+            color: #b30d0d; /* Bloody Red */
+        }
+
+        /* Container for Multiple Images */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Number of Registered Players
+    </h1>
+
+    <div class="container">
+        <!-- Main Content Area (Keeping Data Same) -->
+        <div class="image-section">
+            <img src="player.png" alt="Players">
+        </div>
+
+        <div class="image-section">
+            <img src="never ending tournaments.png" alt="Tournaments">
+        </div>
+    </div>
+</body>
+
+</html>
