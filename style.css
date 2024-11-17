@@ -1,4 +1,4 @@
- /* General Resets */
+  /* General Resets */
 * {
     margin: 0;
     padding: 0;
@@ -423,6 +423,21 @@ a {
 a:hover {
     color: rgb(33, 148, 94); /* Darker red on hover */
 }
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #fff;
+}
+
+h2, h3, h1 {
+    color: #e60000; /* Red color for headings */
+}
+
+/* Sign Up Form Styles */
+/* Main Sign-Up Container */
 .signup-container {
     background-color: #1c1c1c; /* Darker gray for a more modern feel */
     color: white;
@@ -599,4 +614,3 @@ footer {
         text-align: center;
     }
 }
-
