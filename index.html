@@ -8,6 +8,185 @@
     <title>eSports Tournament</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+ <style>
+  .signup-container {
+    background-color: #1c1c1c; /* Darker gray for a more modern feel */
+    color: white;
+    padding: 40px;
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Softer, larger shadow */
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.signup-container h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #ff6f61; /* A slightly softer red */
+    font-weight: 600;
+}
+
+/* Form */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-form label {
+    font-size: 18px;
+    margin: 15px 0 5px;
+    color: #ff6f61;
+    font-weight: 500;
+}
+
+.signup-form input {
+    padding: 12px;
+    font-size: 16px;
+    width: 85%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 2px solid #ff6f61;
+    background-color: #333;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-form input:focus {
+    outline: none;
+    border-color: #ff6f61;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
+    transform: scale(1.02);
+}
+
+/* Submit Button */
+.signup-form .submit-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 14px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-form .submit-btn:hover {
+    background-color: #e35b4d;
+    transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6f61;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #888;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+/* Section Containers */
+.steps, .links, .payment, .check-players, #contact-us {
+    background-color: #2a2a2a;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.steps ol {
+    padding-left: 20px;
+    font-size: 16px;
+    color: #ddd;
+}
+
+.steps li {
+    margin-bottom: 10px;
+}
+
+.payment-btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.payment-btn:hover {
+    background-color: #e35b4d;
+}
+
+.link-btn {
+    background-color: #333;
+    color: #ff6f61;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.link-btn:hover {
+    background-color: #ff6f61;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .signup-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .signup-form input {
+        width: 90%;
+    }
+
+    .signup-form .submit-btn {
+        width: 100%;
+    }
+
+    .nav-links li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}
+
+ </style>
 </head>
 
 <body>
