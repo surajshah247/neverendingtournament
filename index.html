@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewporpat" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>eSports Tournament</title>
     <link rel="stylesheet" href="style.css">
@@ -11,65 +11,62 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h2>Welcome to the Never Ending Tournament</h2>
-            <p>Join the battle and prove your skills!</p>
-        </header>
+    <div>
+        <div class="signup-container">
+            <h2>Sign Up for the Never Ending Tournament</h2>
+            <form method="POST" class="signup-form" name="google-sheet">
+                <label for="player-name">Player Name:</label>
+                <input type="text" id="player-name" name="player-name" required placeholder="enter your name">
 
-        <!-- Navigation Links -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-link home">Home</a></li>
-                <li><a href="#contact-us" class="nav-link contact">Contact us</a></li>
-            </ul>
-        </nav>
+                <label for="phone-number">Phone Number:</label>
+                <input type="text" id="phone-number" name="phone-number" required placeholder="enter your phone number">
 
-        <!-- Steps Section -->
-        <section class="steps">
-            <h2>Steps to Join the Tournament</h2>
-            <ol>
-                <li>Step 1: pay the entry fee to get register</li>
-                <li>Step 2: send the screenshot of paymment to the <a
-                        href="mailto:neverendingtournaments247@gmail.com">neverendingtournaments247@gmail.com</a> or <a
-                        href="https://www.instagram.com/never_ending_tournaments/" target="_blank">Instagram</a></li>
-                <li>Step 3: in between next 24 hour you will be joined to a telegram group</li>
-                <li>Step 4:you will be given the room id and pssword before 2 hour of tournaments </li>
-            </ol>
-        </section>
+                <!-- New Instagram ID Field -->
+                <label for="instagram-id">Instagram ID:</label>
+                <input type="text" id="instagram-id" name="instagram-id" placeholder="enter your instagram id (optional)">
 
-        <!-- Rules Link Section -->
-        <section class="links">
-            <a href="rules.html" class="link-btn">Click here to see the rules</a>
-        </section>
+                <label for="free-fire-id">Free Fire ID:</label>
+                <input type="text" id="free-fire-id" name="free-fire-id" required placeholder="enter your free fire id">
 
-        <!-- Payment Section -->
-        <section class="payment">
-            <h2>Payment for Joining</h2>
-            <p>Scan the QR Code below to make your payment and secure your spot!</p><br>
-            <a href="payment-link.html" class="payment-btn">CLICK HERE FOR PAYMENT</a>
-        </section>
-
-        <section class="check-players">
-            <h3 style="color: rgb(253, 8, 0);">Check the Number of Registered Players</h3><br>
-            <a href="registered-players.html"
-                style="background-color: rgb(5, 4, 4); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 18px;">Check
-                Players</a>
-        </section><br>
-        <!-- Contact Sebrrction -->
-        <section id="contact-us">
-            <h2>Contact</h2>
-            <h3>Contact us for any queries.</h3>
-            <p>Reach out to us on <a href="https://www.instagram.com/never_ending_tournaments/"
-                    target="_blank">Instagram</a></p>
-            <p>Email us at <a href="mailto:neverendingtournaments247@gmail.com">neverendingtournaments247@gmail.com</a>
-            </p>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Never Ending Tournaments. All Rights Reserved.</p>
-        </footer>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFjXHSHhLXP7hbRmJ_ZSJ42SO953O3Ul0SCAnneTUpf6KnjmKGTRDKEqdgk7sjIkgZmA/exec';
+        const form = document.forms['google-sheet'];
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();  // Prevent the default form submission
+
+            // Show thank you message immediately
+            const thankYouMessage = document.createElement('div');
+            thankYouMessage.textContent = 'Thank you for signing up! You will be redirected shortly.';
+            thankYouMessage.style.fontSize = '20px';
+            thankYouMessage.style.color = 'green';
+            thankYouMessage.style.marginTop = '20px';
+            form.parentNode.appendChild(thankYouMessage);
+
+            // Send data to Google Sheets
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    // Show an alert for 3-second wait
+                    alert("Please wait for 2-3 seconds, you will be redirected soon!");
+
+                    // Wait for 3 seconds before redirecting
+                    setTimeout(() => {
+                        window.location.href = "thank-you.html";  // Redirect to thank you page
+                    }, 3000);  // Delay the redirect by 3 seconds
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("There was an error with your submission. Please try again.");
+                });
+        });
+    </script>
 </body>
 
 </html>
+
+
