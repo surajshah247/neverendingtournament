@@ -33,31 +33,29 @@
         </div>
     </div>
 
-    <script>
+     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzFjXHSHhLXP7hbRmJ_ZSJ42SO953O3Ul0SCAnneTUpf6KnjmKGTRDKEqdgk7sjIkgZmA/exec';
         const form = document.forms['google-sheet'];
-
+    
         form.addEventListener('submit', e => {
             e.preventDefault();  // Prevent the default form submission
-
-            // Show thank you message immediately
+    
+            // Show thank you message immediately on the page
             const thankYouMessage = document.createElement('div');
             thankYouMessage.textContent = 'Thank you for signing up! You will be redirected shortly.';
             thankYouMessage.style.fontSize = '20px';
             thankYouMessage.style.color = 'green';
             thankYouMessage.style.marginTop = '20px';
             form.parentNode.appendChild(thankYouMessage);
-
+    
+            // Show an immediate alert to notify the user that they will be redirected
+            alert("Please wait for 2-3 seconds!");
+    
             // Send data to Google Sheets
             fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 .then(response => {
-                    // Show an alert for 3-second wait
-                    alert("click ok and Please wait for 2-3 seconds");
-
-                    // Wait for 3 seconds before redirecting
-                    setTimeout(() => {
-                        window.location.href = "thank-you.html";  // Redirect to thank you page
-                    }, 3000);  // Delay the redirect by 3 seconds
+                    // Redirect immediately after the request is complete
+                    window.location.href = "thank-you.html";  // Redirect to thank you page
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
